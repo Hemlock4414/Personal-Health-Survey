@@ -82,9 +82,61 @@ $fragen= [
             5 => 'Viel zu viel'
         ],
         'wert' => 3
-    ]
+    ],
 
-]
+    [
+        
+        'id' => 'frage6',
+        'typ' => 'text',
+        'frage' => 'An einem typischen Tag: Wie viele deiner Malzeiten oder Snacks enthalten Kohlenhydrate?',
+        'name' => 'inputFrage6',
+        'wert' => ''
+        
+    ],
+
+    [
+        
+        'id' => 'frage7',
+        'typ' => 'text',
+        'frage' => 'An einem typischen Tag: Wie viele deiner Malzeiten oder Snacks enthalten Protein?',
+        'name' => 'inputFrage7',
+        'wert' => ''
+        
+    ],
+
+    [
+        
+        'id' => 'frage8',
+        'typ' => 'text',
+        'frage' => 'An einem typischen Tag: Wie viele deiner Malzeiten oder Snacks enthalten Gemüse?',
+        'name' => 'inputFrage8',
+        'wert' => ''
+        
+    ],
+
+    [
+        
+        'id' => 'frage9',
+        'typ' => 'text',
+        'frage' => 'An einem typischen Tag: Wie viele deiner Malzeiten oder Snacks enthalten Früchte?',
+        'name' => 'inputFrage9',
+        'wert' => ''
+        
+    ],
+
+    [
+        
+        'id' => 'frage10',
+        'typ' => 'text',
+        'frage' => 'An einem typischen Tag: Wie viele deiner Malzeiten kommen aus der Mikrowelle oder sind schon fertig zubereitet?',
+        'name' => 'inputFrage10',
+        'wert' => ''
+        
+    ],
+
+        
+
+];
 
 
 
