@@ -1,143 +1,127 @@
 <?php
 
-$fragen= [
+$fragen = [
 
     [
-        'id' => 'frage1',
+        'id' => '1',
         'typ' => 'slider',
-        'frage' => 'Wie gesund bist du körperlich?',
+        'frage' => 'How healthy are you physically?',
         'name' => 'inputFrage1',
         'min' => 1,
         'max' => 5,
         'beschriftungen' => [
-            1 => 'Überhaupt nicht gesund',
-            2 => 'Nicht so gesund',
-            3 => 'Durchschnittlich gesund',
-            4 => 'Ziemlich gesund',
-            5 => 'Extrem gesund'
+            1 => 'Not healthy at all',
+            2 => 'Not very healthy',
+            3 => 'Average healthy',
+            4 => 'Quite healthy',
+            5 => 'Extremely healthy'
         ],
         'wert' => 3
-
     ],
 
     [
-        'id' => 'frage2',
+        'id' => '2',
         'typ' => 'radio',
-        'frage' => 'Nimmst du Nahrungsergänzungsmittel?',
+        'frage' => 'Do you take dietary supplements?',
         'name' => 'inputFrage2',
-        'optionen' => ['Ja' => 1, 'Nein' => 0,]
+        'optionen' => ['Yes' => 1, 'No' => 0,]
     ],
 
-
     [
-        'id' => 'frage3',
+        'id' => '3',
         'typ' => 'slider',
-        'frage' => '3 Wie wichtig ist köperliche Aktivität für dich?',
+        'frage' => 'How important is physical activity to you?',
         'name' => 'inputFrage3',
         'min' => 1,
         'max' => 5,
         'beschriftungen' => [
-            1 => 'Überhaupt nicht wichtig',
-            2 => 'Nicht so wichtig',
-            3 => 'Nomrmal wichtig',
-            4 => 'Ziemlich wichtig',
-            5 => 'Extrem wichtig'
+            1 => 'Not important at all',
+            2 => 'Not very important',
+            3 => 'Normally important',
+            4 => 'Quite important',
+            5 => 'Extremely important'
         ],
         'wert' => 3
     ],
 
     [
-        'id' => 'frage4',
+        'id' => '4',
         'typ' => 'radio',
-        'frage' => 'Welche zusätzliche körperliche Aktivität betreibst du am meisten?',
+        'frage' => 'What additional physical activity do you do the most?',
         'name' => 'inputFrage4',
         'optionen' => [
-            'Keine zusätzliche körperliche Aktivität' => 0,
-            'Gewichte heben' => 1,
-            'Gehen' => 1,
-            'Wandern' => 1,
-            'Joggen' => 1,
-            'Rennen' => 1,
-            'Schwimmen' => 1,
-            'Tanzen' => 1,
+            'No additional physical activity' => 0,
+            'Weight lifting' => 1,
+            'Walking' => 1,
+            'Hiking' => 1,
+            'Jogging' => 1,
+            'Running' => 1,
+            'Swimming' => 1,
+            'Dancing' => 1,
             'Aerobics' => 1,
             'Pilates' => 1,
-            'Team Sport' => 1,
-            'Andere' => 1,
-                     ] 
+            'Team sport' => 1,
+            'Other' => 1,
+        ]
     ],
 
     [
-        'id' => 'frage5',
+        'id' => '5',
         'typ' => 'slider',
-        'frage' => 'Hast du das Gefühl, zu wenig, genügend oder viel zu viel zusätzliche körperliche Aktivitäten zu betreiben?',
+        'frage' => 'Do you feel you engage in too little, enough, or too much additional physical activity?',
         'name' => 'inputFrage5',
         'min' => 1,
         'max' => 5,
         'beschriftungen' => [
-            1 => 'Viel zu wenig',
-            2 => 'Zu wenig',
-            3 => 'Genau richtig',
-            4 => 'Zu viel',
-            5 => 'Viel zu viel'
+            1 => 'Far too little',
+            2 => 'Too little',
+            3 => 'Just right',
+            4 => 'Too much',
+            5 => 'Far too much'
         ],
         'wert' => 3
     ],
 
     [
-        
-        'id' => 'frage6',
+        'id' => '6',
         'typ' => 'text',
-        'frage' => 'An einem typischen Tag: Wie viele deiner Malzeiten oder Snacks enthalten Kohlenhydrate?',
+        'frage' => 'On a typical day: How many of your meals or snacks contain carbohydrates?',
         'name' => 'inputFrage6',
         'wert' => ''
-        
     ],
 
     [
-        
-        'id' => 'frage7',
+        'id' => '7',
         'typ' => 'text',
-        'frage' => 'An einem typischen Tag: Wie viele deiner Malzeiten oder Snacks enthalten Protein?',
+        'frage' => 'On a typical day: How many of your meals or snacks contain protein?',
         'name' => 'inputFrage7',
         'wert' => ''
-        
     ],
 
     [
-        
-        'id' => 'frage8',
+        'id' => '8',
         'typ' => 'text',
-        'frage' => 'An einem typischen Tag: Wie viele deiner Malzeiten oder Snacks enthalten Gemüse?',
+        'frage' => 'On a typical day: How many of your meals or snacks contain vegetables?',
         'name' => 'inputFrage8',
         'wert' => ''
-        
     ],
 
     [
-        
-        'id' => 'frage9',
+        'id' => '9',
         'typ' => 'text',
-        'frage' => 'An einem typischen Tag: Wie viele deiner Malzeiten oder Snacks enthalten Früchte?',
+        'frage' => 'On a typical day: How many of your meals or snacks contain fruits?',
         'name' => 'inputFrage9',
         'wert' => ''
-        
     ],
 
     [
-        
-        'id' => 'frage10',
+        'id' => '10',
         'typ' => 'text',
-        'frage' => 'An einem typischen Tag: Wie viele deiner Malzeiten kommen aus der Mikrowelle oder sind schon fertig zubereitet?',
+        'frage' => 'On a typical day: How many of your meals come from the microwave or are pre-prepared?',
         'name' => 'inputFrage10',
         'wert' => ''
-        
     ],
 
-        
-
 ];
-
-
 
 ?>
