@@ -1,0 +1,21 @@
+.custom-button {
+    border: 2px solid #fff;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.custom-button-green {
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.custom-button:hover {
+    background-color: #218838;
+    color: #fff;
+}
