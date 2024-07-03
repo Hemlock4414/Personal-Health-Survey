@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,24 +11,10 @@
 
 <body>
 
-<?php
+<form action="umfrage.php" method="get">
+        <button type="submit">Zur Umfragen-Seite</button>
+    </form>
 
-function prettyPrint($a){
-  echo '<pre>';
-  print_r($a);
-  echo '</pre>';
-}
-
-
-?>
-
-  <?php
-
-    include 'php-templates/fragenTemplate.php';
-
-    prettyPrint($_SESSION);
-
-  ?>
 
 </body>
 

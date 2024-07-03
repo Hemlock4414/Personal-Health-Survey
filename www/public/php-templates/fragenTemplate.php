@@ -1,13 +1,10 @@
 <?php
 
-include 'data.php';
+session_start(); // Starte die Session, um darauf zugreifen zu können
 
-if (isset($_SESSION)) {
-    session_unset();
-  }
-  session_start();
-  
+include 'data.php'; // Annahme, dass hier $fragen definiert wird
 
+// Initialisierung des Fortschritts, falls nicht gesetzt
 if (!isset($_SESSION['fortschritt'])) {
     $_SESSION['fortschritt'] = 1;
 }
@@ -37,15 +34,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Navigation
-    if (isset($_POST['zurueck'])) {
+    if (isset($_POST['back'])) {
         if ($_SESSION['fortschritt'] == 1) {
-            header('Location: homepage.php'); // Anpassen auf deine Homepage URL
+            session_unset(); // Zurücksetzen der gesamten Session, falls auf erster Seite und 'Back' gedrückt wurde
+            header('Location: index.php');
             exit;
         } else {
             $_SESSION['fortschritt']--;
         }
-    } elseif (isset($_POST['weiter'])) {
+    } elseif (isset($_POST['next'])) {
         $_SESSION['fortschritt']++;
+    } elseif (isset($_POST['send'])) {
+        header('Location: result.php');
+        exit;
     }
 }
 
@@ -55,29 +56,30 @@ foreach ($fragen as $frage) {
     if ($frage['id'] == $aktuelleFrageId) {
         echo '<form method="post" action="">';
         
-        // Slider-Typ Frage
+        // Je nach Fragetyp das entsprechende HTML ausgeben
         if ($frage['typ'] == 'slider') {
             echo '<p>' . $frage['frage'] . '</p>';
-            echo '<input type="range" min="' . $frage['min'] . '" max="' . $frage['max'] . '" value="' . $frage['wert'] . '" name="' . $frage['name'] . '" id="' . $frage['id'] . '" required>';
-        
-        // Radio-Typ Frage
+            echo '<input type="range" min="' . $frage['min'] . '" max="' . $frage['max'] . '" value="' . $frage['wert'] . '" name="' . $frage['name'] . '" id="' . $frage['id'] . '" >';
         } elseif ($frage['typ'] == 'radio') {
             echo '<p>' . $frage['frage'] . '</p>';
             foreach ($frage['optionen'] as $optionText => $optionValue) {
                 echo '<label>';
-                echo '<input type="radio" name="' . $frage['name'] . '" value="' . $optionValue . '" required> ' . $optionText;
+                echo '<input type="radio" name="' . $frage['name'] . '" value="' . $optionValue . '" > ' . $optionText;
                 echo '</label><br>';
             }
-        
-        // Number-Typ Frage (vorher Text)
-        } elseif ($frage['typ'] == 'text') { // Anpassen auf number falls du text nicht ändern möchtest
+        } elseif ($frage['typ'] == 'text') {
             echo '<p>' . $frage['frage'] . '</p>';
-            echo '<input type="number" name="' . $frage['name'] . '" value="' . $frage['wert'] . '" min="0" max="5" required>';
+            echo '<input type="number" name="' . $frage['name'] . '" value="' . $frage['wert'] . '" min="0" max="5" >';
         }
         
         // Zurück- und Weiter-Buttons
-        echo '<button type="submit" name="zurueck">Zurück</button>';
-        echo '<button type="submit" name="weiter">Weiter</button>';
+        echo '<button type="submit" name="back">Back</button>';
+        if ($aktuelleFrageId != 10) { // Annahme, dass hier die maximale Anzahl an Fragen festgelegt ist
+            echo '<button type="submit" name="next">Next</button>';
+        } else {
+            echo '<button type="submit" name="send">Send</button>';
+        }
+        
         echo '</form>';
         break; // Beende die Schleife nachdem die passende Frage angezeigt wurde
     }
