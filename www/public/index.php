@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,8 +11,22 @@
 
 <body>
 
+<?php
+
+function prettyPrint($a){
+  echo '<pre>';
+  print_r($a);
+  echo '</pre>';
+}
+
+
+?>
+
   <?php
 
+    include 'php-templates/fragenTemplate.php';
+
+    prettyPrint($_SESSION);
 
   ?>
 
