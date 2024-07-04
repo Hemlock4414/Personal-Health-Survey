@@ -13,6 +13,6 @@ include 'php-templates/resultatRechnung.php';
     
 
     ?>
-    
+   
 </body>
 </html>

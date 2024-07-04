@@ -14,74 +14,75 @@ if (!isset($_SESSION['antworten'])) {
     $_SESSION['antworten'] = [];
 }
 
-// Verarbeiten der Formularübermittlung
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $aktuelleFrageId = $_SESSION['fortschritt'];
+$aktuelleFrageId = $_SESSION['fortschritt'];
+$frage = $fragen[$aktuelleFrageId];
+$punkteId = 'punkte' . $aktuelleFrageId;
 
-    // Antworten speichern
-    foreach ($fragen as $frage) {
-        if ($frage['id'] == $aktuelleFrageId) {
-            // Überprüfen und speichern des Werts der Antwort basierend auf dem Fragetyp
-            if ($frage['typ'] == 'slider' || $frage['typ'] == 'text') {
-                if (isset($_POST[$frage['name']])) {
-                    $_SESSION['antworten']["Frage $aktuelleFrageId"] = $_POST[$frage['name']];
-                }
-            } elseif ($frage['typ'] == 'radio' && isset($_POST[$frage['name']])) {
-                $_SESSION['antworten']["Frage $aktuelleFrageId"] = $_POST[$frage['name']];
-            }
-            break;
-        }
-    }
-
-    // Navigation
-    if (isset($_POST['back'])) {
-        if ($_SESSION['fortschritt'] == 1) {
-            session_unset(); // Zurücksetzen der gesamten Session, falls auf erster Seite und 'Back' gedrückt wurde
-            header('Location: index.php');
-            exit;
-        } else {
-            $_SESSION['fortschritt']--;
-        }
-    } elseif (isset($_POST['next'])) {
-        $_SESSION['fortschritt']++;
-    } elseif (isset($_POST['send'])) {
-        header('Location: result.php');
+// Navigation
+if (isset($_POST['back'])) {
+    if ($_SESSION['fortschritt'] == 1) {
+        session_unset(); // Zurücksetzen der gesamten Session, falls auf erster Seite und 'Back' gedrückt wurde
+        header('Location: index.php');
         exit;
+    } else {
+        $_SESSION['fortschritt']--;
+        $aktuelleFrageId = $_SESSION['fortschritt'];
+        $frage = $fragen[$aktuelleFrageId];
     }
+} elseif (isset($_POST['next'])) {
+    $antwort = $_POST[$frage['name']];
+
+    
+    $_SESSION['antworten'][$punkteId] = $antwort;
+
+    /* $_SESSION['antworten'][$frage['id']] = $antwort; */
+    $_SESSION['fortschritt']++;
+    $aktuelleFrageId = $_SESSION['fortschritt'];
+    $frage = $fragen[$aktuelleFrageId];
+} elseif (isset($_POST['send'])) {
+    $antwort = $_POST[$frage['name']];
+    $_SESSION['antworten'][$punkteId] = $antwort;
+    header('Location: result.php');
+    exit;
 }
 
-$aktuelleFrageId = $_SESSION['fortschritt'];
-
-foreach ($fragen as $frage) {
-    if ($frage['id'] == $aktuelleFrageId) {
-        echo '<form method="post" action="">';
+    echo '<form method="post" action="">';
         
-        // Je nach Fragetyp das entsprechende HTML ausgeben
         if ($frage['typ'] == 'slider') {
-            echo '<p>' . $frage['frage'] . '</p>';
-            echo '<input type="range" min="' . $frage['min'] . '" max="' . $frage['max'] . '" value="' . $frage['wert'] . '" name="' . $frage['name'] . '" id="' . $frage['id'] . '" >';
+            printSlider(
+                $frage['frage'], 
+                $frage['name'], 
+                $frage['id'], 
+                $frage['min'], 
+                $frage['max'], 
+                $frage['wert']
+            );
         } elseif ($frage['typ'] == 'radio') {
-            echo '<p>' . $frage['frage'] . '</p>';
-            foreach ($frage['optionen'] as $optionText => $optionValue) {
-                echo '<label>';
-                echo '<input type="radio" name="' . $frage['name'] . '" value="' . $optionValue . '" > ' . $optionText;
-                echo '</label><br>';
-            }
-        } elseif ($frage['typ'] == 'text') {
-            echo '<p>' . $frage['frage'] . '</p>';
-            echo '<input type="number" name="' . $frage['name'] . '" value="' . $frage['wert'] . '" min="0" max="5" >';
+            printRadio(
+                $frage['frage'], 
+                $frage['name'], 
+                $frage['id'],
+                $frage['optionen'], 
+            );
+        } elseif ($frage['typ'] == 'number') {
+            printNumber(
+                $frage['frage'], 
+                $frage['name'], 
+                $frage['id'], 
+                $frage['min'], 
+                $frage['max'], 
+                $frage['wert']
+            );
         }
-        
         // Zurück- und Weiter-Buttons
-        echo '<button type="submit" name="back">Back</button>';
+        echo'<div class= "button"><button type="submit" name="back">Back</button>';
         if ($aktuelleFrageId != 10) { // Annahme, dass hier die maximale Anzahl an Fragen festgelegt ist
-            echo '<button type="submit" name="next">Next</button>';
+            echo '<button type="submit" name="next">Next</button></div>';
         } else {
-            echo '<button type="submit" name="send">Send</button>';
+            echo '<button type="submit" name="send">Send</button></div>';
         }
         
         echo '</form>';
-        break; // Beende die Schleife nachdem die passende Frage angezeigt wurde
-    }
-}
+
+
 ?>
