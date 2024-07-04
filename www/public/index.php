@@ -19,7 +19,9 @@ if (str_contains($_SERVER['SCRIPT_NAME'], "index.php")) {
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- MDBootstrap CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet">
+  <!-- Andere Meta-Tags und CSS-Links -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" type="text/css" href="src/css/style.css">
   <title>StartPage</title>
 </head>
@@ -132,7 +134,9 @@ if (str_contains($_SERVER['SCRIPT_NAME'], "index.php")) {
     </div>
   </section>
 
-<footer></footer>
+<?php
+include 'footer.php';
+?>
 
 </body>
 
