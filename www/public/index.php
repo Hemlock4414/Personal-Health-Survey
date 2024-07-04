@@ -1,5 +1,10 @@
 
-<?php session_start(); ?>
+
+<?php 
+session_unset();
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,14 +19,21 @@
 </head>
 
 <body>
+<?php
+include "header.php";
+?>
+
+
 
 
 <form action="umfrage.php" method="get">
         <button type="submit">Zur Umfragen-Seite</button>
     </form>
+ 
 
-
-
+<?php
+include "footer.php";
+?>
 </body>
 
 </html>

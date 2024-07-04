@@ -1,3 +1,6 @@
+
+
+
 <?php
 
 session_start(); // Starte die Session, um darauf zugreifen zu können
@@ -54,34 +57,35 @@ $aktuelleFrageId = $_SESSION['fortschritt'];
 
 foreach ($fragen as $frage) {
     if ($frage['id'] == $aktuelleFrageId) {
-        echo '<form method="post" action="">';
+        echo '<div id= "formContainer"> <form method="post" action="">';
         
         // Je nach Fragetyp das entsprechende HTML ausgeben
         if ($frage['typ'] == 'slider') {
-            echo '<p>' . $frage['frage'] . '</p>';
-            echo '<input type="range" min="' . $frage['min'] . '" max="' . $frage['max'] . '" value="' . $frage['wert'] . '" name="' . $frage['name'] . '" id="' . $frage['id'] . '" >';
+            echo '<p class= "textFrage">' . $frage['frage'] . '</p>';
+            echo '<input class= "classSlider" type="range" min="' . $frage['min'] . '" max="' . $frage['max'] . '" value="' . $frage['wert'] . '" name="' . $frage['name'] . '" id="' . $frage['id'] . '" >';
         } elseif ($frage['typ'] == 'radio') {
-            echo '<p>' . $frage['frage'] . '</p>';
+            echo '<p class= "textFrage">' . $frage['frage'] . '</p>';
             foreach ($frage['optionen'] as $optionText => $optionValue) {
-                echo '<label>';
-                echo '<input type="radio" name="' . $frage['name'] . '" value="' . $optionValue . '" > ' . $optionText;
+                echo '<label class= "classRadio">';
+                echo '<input  type="radio" name="' . $frage['name'] . '" value="' . $optionValue . '" > ' . $optionText;
                 echo '</label><br>';
             }
         } elseif ($frage['typ'] == 'text') {
-            echo '<p>' . $frage['frage'] . '</p>';
-            echo '<input type="number" name="' . $frage['name'] . '" value="' . $frage['wert'] . '" min="0" max="5" >';
+            echo '<p class= "textFrage">' . $frage['frage'] . '</p>';
+            echo '<input class= "classNumber" type="number" name="' . $frage['name'] . '" value="' . $frage['wert'] . '" min="0" max="5" >';
         }
         
         // Zurück- und Weiter-Buttons
-        echo '<button type="submit" name="back">Back</button>';
+        echo '<div class="buttons"> <button class="back-button" type="submit" name="back"><span class="button-text">BACK</Back</span></button>';
         if ($aktuelleFrageId != 10) { // Annahme, dass hier die maximale Anzahl an Fragen festgelegt ist
-            echo '<button type="submit" name="next">Next</button>';
+            echo '<button type="submit" name="next"><span class="button-text">Next</span></button> </div>';
         } else {
-            echo '<button type="submit" name="send">Send</button>';
+            echo '<button type="submit" name="send"><span class="button-text">Send</span></button> </div>';
         }
         
-        echo '</form>';
+        echo '</form> </div>';
         break; // Beende die Schleife nachdem die passende Frage angezeigt wurde
     }
 }
-?>
+
+

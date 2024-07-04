@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="header">
-        <h1 class="header-title">VitaQuest</h1>
+        <h1 class="header-title"><a href="index.php">VitaQuest</a></h1>
         </div>
     </header>
   
