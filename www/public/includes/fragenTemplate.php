@@ -4,6 +4,8 @@ session_start(); // Starte die Session, um darauf zugreifen zu können
 
 include 'data.php'; // Annahme, dass hier $fragen definiert wird
 
+prettyPrint($_POST); // DEVONLY
+
 // Initialisierung des Fortschritts, falls nicht gesetzt
 if (!isset($_SESSION['fortschritt'])) {
     $_SESSION['fortschritt'] = 1;
@@ -74,6 +76,11 @@ if (isset($_POST['back'])) {
                 $frage['wert']
             );
         }
+
+        // aktuelleFrageId im Post hinterlegen.
+        echo "<input type='hidden' 
+                     name='letzteFrageId' value='$aktuelleFrageId'>";
+
         // Zurück- und Weiter-Buttons
         echo'<div class= "button"><button type="submit" name="back">Back</button>';
         if ($aktuelleFrageId != 10) { // Annahme, dass hier die maximale Anzahl an Fragen festgelegt ist
