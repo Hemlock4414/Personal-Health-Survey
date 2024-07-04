@@ -1,0 +1,42 @@
+.custom-button {
+    border: 2px solid #fff;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 150px;
+    font-weight: bold;
+}
+
+.custom-button:hover {
+    background-color: #129764;
+    color: #fff;
+}
+
+.custom-button-green {
+    background-color: #129764;
+    color: #fff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 150px;
+    font-weight: bold;
+}
+
+.custom-button-green:hover {
+    background-color: #f0f0f0;
+}
+
+.img-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-fluid {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    object-position: center;
+}
