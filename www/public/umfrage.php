@@ -4,7 +4,10 @@ ini_set('session.gc_maxlifetime', 3600); // Setzt die Lebensdauer auf 1 Stunde
 session_set_cookie_params(3600); // Setzt die Cookie-Lebensdauer auf 1 Stunde
 session_start();
 ?>
+<?php
+session_start();
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,11 +30,6 @@ include 'header.php';
     ?>
     
 </div>
-    <?php
-    include 'footer.php';
-    ?>
-
-
 
     
 </body>
