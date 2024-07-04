@@ -11,6 +11,16 @@
 
 <body>
 
+  <?php function prettyPrint($a){
+    echo '<pre>';
+    print_r($a);
+    echo '</pre>';
+}
+prettyPrint($_SESSION);
+?>
+
+
+
 <form action="umfrage.php" method="get">
         <button type="submit">Zur Umfragen-Seite</button>
     </form>

@@ -7,10 +7,17 @@
 </head>
 <body>
 
-  <?php
-    include 'php-templates/fragenTemplate.php';
 
-  
+
+  <?php
+    include 'includes/fragenTemplate.php';
+
+    function prettyPrint($a){
+      echo '<pre>';
+      print_r($a);
+      echo '</pre>';
+  }
+  prettyPrint($_SESSION);
 
 
 

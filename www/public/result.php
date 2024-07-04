@@ -9,7 +9,7 @@
 <body>
 
 <?php
-include 'php-templates/resultatRechnung.php';
+include 'includes/resultatRechnung.php';
     
 
     ?>
