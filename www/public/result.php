@@ -10,9 +10,7 @@
 
 <?php
 include 'includes/resultatRechnung.php';
-    
-
-    ?>
+?>
    
 </body>
 </html>
