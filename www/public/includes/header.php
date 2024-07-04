@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
-    <link rel="stylesheet" href="header-footer.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
+    
 </head>
 <body>
     <header>

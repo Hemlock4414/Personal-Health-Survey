@@ -13,23 +13,29 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="fragen.css">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
+    <link rel="stylesheet" type="text/css" href="src/css/fragen.css">
+
+<title>Document</title>
 </head>
 <body>
 <?php
-include 'header.php';
+include 'includes/header.php';
 ?>
+
 <div class="fragen-container">
     <h1>Survey</h1>
   
-    <?php
-
-    include 'php-templates/fragenTemplate.php';
-    ?>
+<?php
+include 'includes/fragenTemplate.php';
+?>
     
 </div>
+
+<?php
+include 'includes/footer.php';
+?>
+
 
     
 </body>

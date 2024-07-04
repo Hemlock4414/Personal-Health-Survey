@@ -17,8 +17,8 @@
         font-weight: 200;
         vertical-align: center;
     }
-    
-    footer{
+} 
+/*     footer{
         margin-top: auto;
         background-color: #129764;
         color: white;
@@ -36,7 +36,7 @@
     }
 
 
-}
+} */
 
 /* Desktop Version */
 
@@ -50,6 +50,7 @@
     font-weight: 200;
 }
 
+
 .header-title{
     padding-top: 15px;
     text-align: center;
@@ -58,12 +59,11 @@
     font-weight: 200;
     vertical-align: center;
 }
-
-main {
+/* main {
     min-height: 85vh; 
 }
-
-footer{
+ */
+/* footer{
     margin-top: auto;
     background-color: #129764;
     color: white;
@@ -79,4 +79,4 @@ footer{
 .footer-logo{
     max-width: 100px;
     height: auto;  
-}
+} */
