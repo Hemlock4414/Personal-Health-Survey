@@ -132,18 +132,21 @@ function printSlider($frage, $frageName, $frageId, $frageMin, $frageMax, $frageW
 }
 
 function printRadio($frage, $frageName, $frageId, $optionen) {
-    
+    $idCount= 0;   
     echo "<p>$frage</p>";
             foreach ($optionen as $optionText => $optionValue){
+                $radioId= $frageId. '-'. $idCount;
                     echo "<label>
                             <input type='radio'
                             name= '$frageName'
-                            id= '$frageId'
+                            id= '$radioId'
                             value='$optionValue'>
                             $optionText
                             </label>
                             <br>";
-}
+                $idCount++ ;
+                } 
+    echo "<input type='text' name= 'textForOthers' id= 'textForOthers' class='hidden' value= ''> <br>";
             
 }
 
@@ -156,6 +159,12 @@ function printNumber($frage, $frageName, $frageId, $frageMin, $frageMax, $frageW
             min='$frageMin' 
             max='$frageMax' 
             value='$frageWert'>";           
+}
+
+ function prettyPrint($a){
+    echo '<pre>';
+    print_r($a);
+    echo '</pre>';
 }
 
 ?>

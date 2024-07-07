@@ -77,9 +77,9 @@ if (isset($_POST['back'])) {
             );
         }
 
-        // aktuelleFrageId im Post hinterlegen.
-        echo "<input type='hidden' 
-                     name='letzteFrageId' value='$aktuelleFrageId'>";
+  // aktuelleFrageId im Post hinterlegen.
+        /* echo "<input type='hidden' 
+                     name='letzteFrageId' value='$aktuelleFrageId'>"; */
 
         // Zurück- und Weiter-Buttons
         echo'<div class= "button"><button type="submit" name="back">Back</button>';
