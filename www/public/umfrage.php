@@ -1,8 +1,14 @@
 <?php
+session_start();
 
-if (!isset($_SESSION)) {
-    session_start();
+
+function prettyPrint($a){
+    echo '<pre>';
+    print_r($a);
+    echo '</pre>';
 }
+
+prettyPrint($_SESSION);
 
 ?>
 
@@ -29,7 +35,9 @@ include 'includes/header.php';
     <h1>Survey</h1>
   
 <?php
+
 include 'includes/fragenTemplate.php';
+
 ?>
     
 </div>
@@ -39,6 +47,6 @@ include 'includes/footer.php';
 ?>
 
 
- <script src="scripts/vali.js"></script>   
+   
 </body>
 </html>

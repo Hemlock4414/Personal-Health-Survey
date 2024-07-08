@@ -1,9 +1,5 @@
 <?php
 
-if (!isset($_SESSION)) {
-    session_start();
-}
-
 $fragen = [
     '1' => ['id' => 'frage1',
         'typ' => 'slider',
@@ -123,7 +119,6 @@ $fragen = [
         'wert' => ''],
 ];
 
-
 function printSlider($frage, $frageName, $frageId, $frageMin, $frageMax, $frageWert) {
     echo "<p>$frage</p>
           <input type='range'
@@ -135,22 +130,29 @@ function printSlider($frage, $frageName, $frageId, $frageMin, $frageMax, $frageW
   
 }
 
+
 function printRadio($frage, $frageName, $frageId, $optionen) {
-    $idCount= 0;   
-    echo "<p>$frage</p>";
+    $idCount= 0;
+
+    echo "\n<p>$frage</p>\n";
             foreach ($optionen as $optionText => $optionValue){
                 $radioId= $frageId. '-'. $idCount;
-                    echo "<label>
-                            <input type='radio'
-                            name= '$frageName'
-                            id= '$radioId'
-                            value='$optionValue'>
-                            $optionText
-                            </label>
-                            <br>";
+                    echo "
+    <label>
+        <input  type='radio'
+                name= '$frageName'
+                id= '$radioId'
+                value='$optionValue'>
+    </label>
+    <br>
+    ";
                 $idCount++ ;
                 } 
-    echo "<input type='text' name= 'textForOthers' id= 'textForOthers' class='hidden' value= ''> <br>";
+/*     echo "\n<input  type='text' 
+                    name= 'textForOthers' 
+                    id= 'textForOthers' 
+                    class='hidden' $
+                    value= ''> <br>"; */
             
 }
 

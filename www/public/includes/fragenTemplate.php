@@ -1,55 +1,68 @@
 <?php
 
-if (!isset($_SESSION)) {
-    session_start();
-}
-
 include 'data.php'; // Annahme, dass hier $fragen definiert wird
 
 
-// Initialisierung des Fortschritts, falls nicht gesetzt
+// Initialisierung des Fortschritts, und $aktuelleFrageId
 if (!isset($_SESSION['fortschritt'])) {
+    echo "Fortschritt = 1; <br>";
     $_SESSION['fortschritt'] = 1;
 }
+
+$letzteFrageId = $_SESSION['fortschritt'];
+
+if (isset($_POST['next'])) {
+    $aktuelleFrageId = $letzteFrageId + 1;
+}
+else if (isset($_POST['back'])) {
+    $aktuelleFrageId = $letzteFrageId - 1;
+}
+else {
+    $aktuelleFrageId = $letzteFrageId;
+}
+
+$_SESSION['fortschritt'] = $aktuelleFrageId;
+$letzteFrageName = 'inputFrage' . $letzteFrageId;
+
+// Fragedaten und punkte id
+$frage = $fragen[$aktuelleFrageId];
+$punkteId = 'punkte' . $letzteFrageId;
 
 // Initialisieren des Antwort-Arrays in der Session, falls noch nicht vorhanden
 if (!isset($_SESSION['antworten'])) {
     $_SESSION['antworten'] = [];
 }
 
-$aktuelleFrageId = $_SESSION['fortschritt'];
-$frage = $fragen[$aktuelleFrageId];
-$punkteId = 'punkte' . $aktuelleFrageId;
+echo "\$letzteFrageId = $letzteFrageId; <br>";
+echo "\$aktuelleFrageId = $aktuelleFrageId; <br>";
+echo "\$letzteFrageName = $letzteFrageName; <br>";
+prettyPrint($frage);
+prettyPrint($_POST);
 
-// Navigation
+// Setze die erreichte Punktzahl in die Session, 
+// abhängig von 'back', 'next' oder 'send'. 
 if (isset($_POST['back'])) {
-    if ($_SESSION['fortschritt'] == 1) {
-        session_unset(); // Zurücksetzen der gesamten Session, falls auf erster Seite und 'Back' gedrückt wurde
-        header('Location: index.php');
-        exit;
-    } else {
-        $_SESSION['fortschritt']--;
-        $aktuelleFrageId = $_SESSION['fortschritt'];
-        $frage = $fragen[$aktuelleFrageId];
-    }
+    // Es werden beim Zurückgehen keine Punkte registriert.
+    echo "BACK<br>";
+
 } elseif (isset($_POST['next'])) {
-    $antwort = $_POST[$frage['name']];
+    // Punkte registrieren
+    echo "NEXT<br>";
 
-    
-    $_SESSION['antworten'][$punkteId] = $antwort;
-
-    /* $_SESSION['antworten'][$frage['id']] = $antwort; */
-    $_SESSION['fortschritt']++;
-    $aktuelleFrageId = $_SESSION['fortschritt'];
-    $frage = $fragen[$aktuelleFrageId];
+    // $antwort = $_POST[$frage['name']];
+    $_SESSION['antworten'][$punkteId] = $_POST[$letzteFrageName];
 } elseif (isset($_POST['send'])) {
-    $antwort = $_POST[$frage['name']];
-    $_SESSION['antworten'][$punkteId] = $antwort;
+    // Punkte registrieren und auf result.php weiterleiten.
+    echo "SEND<br>";
+    
+    // $antwort = $_POST[$frage['name']];
+    $_SESSION['antworten'][$punkteId] = $_POST[$letzteFrageName];
+
     header('Location: result.php');
     exit;
 }
 
-    echo '<form method="post" action="">';
+    echo "\n<form method='post' action='umfrage.php'>";
         
         if ($frage['typ'] == 'slider') {
             printSlider(
@@ -83,12 +96,26 @@ if (isset($_POST['back'])) {
                      name='letzteFrageId' value='$aktuelleFrageId'>"; */
 
         // Zurück- und Weiter-Buttons
-        echo'<div class= "button"><button type="submit" name="back">Back</button>';
+        echo "\n
+        <div class= 'button'>
+            <button type='submit' 
+                    name='back'>
+                    Back</button>";
         if ($aktuelleFrageId != 10) { // Annahme, dass hier die maximale Anzahl an Fragen festgelegt ist
-            echo '<button type="submit" name="next">Next</button></div>';
-        } else {
-            echo '<button type="submit" name="send">Send</button></div>';
+            echo "\n
+            <button type='submit'
+                    name='next'>
+                    Next</button>
+        </div>";
+        } 
+        else {
+            echo "\n
+            <button type='submit'
+                    name='send'>
+                    Send</button>
+        </div>";
         }
-        
-        echo '</form>';
+        echo "\n</form>";
+
+        echo "\n<script src='scripts/vali.js'></script>";
 
