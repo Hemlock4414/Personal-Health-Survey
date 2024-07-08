@@ -18,7 +18,7 @@ body{
 }
 
 
-.custom-button {
+a.btn.btn-lg.custom-button {
     border: 2px solid #fff;
     background-color: #fff;
     color: #000;
@@ -29,12 +29,12 @@ body{
     font-weight: bold;
 }
 
-.custom-button:hover {
+a.btn.btn-lg.custom-button:hover {
     background-color: #129764;
     color: #fff;
 }
 
-.custom-button-green {
+a.btn.btn-lg.custom-button-green {
     background-color: #129764;
     color: #fff;
     border-radius: 50px;
@@ -44,7 +44,7 @@ body{
     font-weight: bold;
 }
 
-.custom-button-green:hover {
+a.btn.btn-lg.custom-button-green:hover {
     background-color: #f0f0f0;
 }
 
