@@ -16,6 +16,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="src/css/style.css">
     <link rel="stylesheet" type="text/css" href="src/css/fragen.css">
     <link rel="stylesheet" type="text/css" href="src/css/header.css">
+    <link rel="icon" type="image/png" href="src/img/V1.png">
 
 
 <title>Document</title>
