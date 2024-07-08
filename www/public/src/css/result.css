@@ -1,7 +1,4 @@
 .result-page{
-<<<<<<< HEAD
-    height: 800px;
-=======
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -46,5 +43,4 @@
 
 .very-healthy {
     color: green;
->>>>>>> resultate2
 }

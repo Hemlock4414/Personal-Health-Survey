@@ -27,15 +27,6 @@ $totalPunkte += prozentFrage10($punkte10);
 
 
 if ($totalPunkte<= 3){
-<<<<<<< HEAD
-    echo '<p>unhealthy</p>';
-  }elseif($totalPunkte<= 7){
-    echo '<p>healthy</p>';
-  }else{
-    echo '<p>very healthy</p>';
-  }
-
-=======
     echo '<div class="result-answer"> <p class="unhealthy">unhealthy</p> </div>';
   }elseif($totalPunkte<= 7){
     echo '<div class="result-answer"> <p class="healthy">healthy </p> </div>';
@@ -45,7 +36,6 @@ if ($totalPunkte<= 3){
 
 
 
->>>>>>> resultate2
 // Auswertungsfunktionen Punkte -> Prozent ---------------------
 
 function prozentFrage1($punkte1) {
