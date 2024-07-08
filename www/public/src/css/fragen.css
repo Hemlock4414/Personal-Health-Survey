@@ -26,8 +26,10 @@ p.textFrage{
     height: 86%;
     text-align: center;
     margin-top: 100px;
+    margin-bottom: 200px;
     display: flex;
     flex-direction: column;
+    
     
 }
 
@@ -74,10 +76,11 @@ input[type="number"] {
     justify-content: center;
     padding-top: 100px;
     
+    
 }
 
 button {
-    
+    margin-top: 20px;
     padding: 20px 45px;
     background-color: #129764;
     color: white;
@@ -92,6 +95,7 @@ button {
     color: white;
     text-transform: uppercase;
     font-size: 24px;
+    margin: 0 auto;
 }
 
 
