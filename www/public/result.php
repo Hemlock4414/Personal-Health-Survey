@@ -19,11 +19,11 @@
 
 
 
-<?php include '/includes/header.php';?>
+<?php include 'includes/header.php';?>
 <div class="result-page">
 <?php include 'includes/resultatRechnung.php';?>
 </div> 
-<?php include '/includes/footer.php';?>    
+<?php include 'includes/footer.php';?>    
 
    
 </body>

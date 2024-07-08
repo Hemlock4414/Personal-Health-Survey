@@ -1,13 +1,11 @@
 <?php
-// Am Anfang Ihrer Skripte, vor session_start()
-ini_set('session.gc_maxlifetime', 3600); // Setzt die Lebensdauer auf 1 Stunde
-session_set_cookie_params(3600); // Setzt die Cookie-Lebensdauer auf 1 Stunde
-session_start();
-?>
-<?php
-session_start();
+
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +35,6 @@ include 'includes/footer.php';
 ?>
 
 
-    
+ <script src="scripts/vali.js"></script>   
 </body>
 </html>

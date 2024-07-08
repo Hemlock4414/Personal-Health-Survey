@@ -1,14 +1,15 @@
 
-<?php
-// $_SESSION initialisieren
-session_start();
 
-if (str_contains($_SERVER['SCRIPT_NAME'], "index.php")) {
-    session_destroy();
-    session_start();
+<?php
+if (isset($_SESSION)) {
+  session_unset();
+  session_destroy();
+  session_start();
 }
 
 ?>
+
+ 
 
 <!DOCTYPE html>
 <html lang="en">
