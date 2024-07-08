@@ -42,12 +42,15 @@
 
 
 .header{
+    display: flex;
+    justify-content: center;
     background-color: #129764;
     color: white;
     height: 90px;
     top: 0px;
     font-size: 48px;
     font-weight: 200;
+    text-decoration: none;
 }
 
 
@@ -58,6 +61,10 @@
     font-size: 48px;
     font-weight: 200;
     vertical-align: center;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    
 }
 /* main {
     min-height: 85vh; 
