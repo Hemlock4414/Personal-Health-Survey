@@ -1,0 +1,117 @@
+.classNumer{
+    margin-top: 50px;
+    width: 200px;
+}
+
+
+p.textFrage{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+
+.buttons{
+    padding: 20px;
+}
+
+.classRadio{
+    height: 300px;
+
+}
+
+.fragen-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 86%;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.frage-form {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    justify-content: space-between;
+}
+
+.frage h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.antworten {
+    margin-bottom: 20px;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    padding-top: 100px;
+    
+    
+}
+
+button {
+    margin-top: 20px;
+    padding: 20px 45px;
+    background-color: #129764;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.button-text {
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin: 0 auto;
+}
+
+
+button:hover {
+    background-color: hsla(157, 79%, 33%, 0.822);
+}
+
+
+.back-button{
+    background-color: black;
+}
+
+.back-button:hover{
+    background-color: #000000bd;
+}
+
+.hidden{
+    display: none;
+}

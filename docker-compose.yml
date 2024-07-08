@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    container_name: p-h-s-opportunity
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./www:/var/www
+  nginx:
+    image: nginx:1.19-alpine
+    container_name: p-h-s-nginx
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./www:/var/www
+      - ./docker/nginx:/etc/nginx/conf.d
