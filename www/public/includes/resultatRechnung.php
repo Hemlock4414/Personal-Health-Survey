@@ -26,13 +26,23 @@ $totalPunkte += prozentFrage10($punkte10);
 
 
 
-if ($totalPunkte<= 3){
-    echo '<div class="result-answer"> <p>unhealthy</p> </div>';
-  }elseif($totalPunkte<= 7){
-    echo '<div class="result-answer"> <p>healthy </p> </div>';
-  }else{
-    echo '<div class="result-answer"> <p> very healthy </p> </div>';
-  }
+if ($totalPunkte <= 3) {
+    echo '<div class="result-answer">
+        <p class="result-answer-intro">Based on our state-of-the-art health assessment algorithm, developed by leading medical experts and data scientists, we have analyzed the information you provided. Considering multiple health factors, we have generated a <b>deeply complex personalized evaluation</b> of your current health status. As a result of this comprehensive analysis, you have achieved the following result: </p>
+
+        <p>unhealthy</p>
+    </div>';
+} elseif ($totalPunkte <= 7) {
+    echo '<div class="result-answer">
+        <p class="result-answer-intro">Based on our state-of-the-art health assessment algorithm, developed by leading medical experts and data scientists, we have analyzed the information you provided. Considering multiple health factors, we have generated a <b>deeply complex personalized evaluation</b> of your current health status. As a result of this comprehensive analysis, you have achieved the following result: </p>
+      <p>healthy</p>
+    </div>';
+} else {
+    echo '<div class="result-answer">
+  <p class="result-answer-intro">Based on our state-of-the-art health assessment algorithm, developed by leading medical experts and data scientists, we have analyzed the information you provided. Considering multiple health factors, we have generated a <b>deeply complex personalized evaluation</b> of your current health status. As a result of this comprehensive analysis, you have achieved the following result: </p>
+      <p>very healthy</p>
+    </div>';
+}
 
 // Auswertungsfunktionen Punkte -> Prozent ---------------------
 

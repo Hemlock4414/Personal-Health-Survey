@@ -7,7 +7,13 @@
 }
 
 .result-answer{
-    font-size: 48px;
+    font-size: 36px;
     text-align: center;
     justify-content: center;
+}
+
+
+.result-answer-intro{
+
+    font-size: 24px;
 }
