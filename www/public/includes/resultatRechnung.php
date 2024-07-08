@@ -1,9 +1,5 @@
 
 <?php
-if (!isset($_SESSION)) {
-    session_start();
-}
-
 
 foreach ($_SESSION['antworten'] as $key => $value) {
     ${$key} = $value;

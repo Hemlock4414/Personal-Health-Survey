@@ -1,9 +1,5 @@
 <?php
 
-if (!isset($_SESSION)) {
-    session_start();
-}
-
 $fragen = [
     '1' => ['id' => 'frage1',
         'typ' => 'slider',

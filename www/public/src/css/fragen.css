@@ -10,9 +10,6 @@ p.textFrage{
     font-size: 20px;
 }
 
-.buttons{
-    padding: 20px;
-}
 
 .classRadio{
     height: 300px;
@@ -70,14 +67,6 @@ input[type="number"] {
     margin-top: 20px;
 }
 
-.buttons {
-    display: flex;
-    gap: 50px;
-    justify-content: center;
-    padding-top: 100px;
-    
-    
-}
 
 button {
     margin-top: 20px;
@@ -106,7 +95,15 @@ button:hover {
 
 .back-button{
     background-color: black;
-}
+        margin-top: 20px;
+        padding: 20px 45px;
+        color: white;
+        border: none;
+        border-radius: 24px;
+        box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+
 
 .back-button:hover{
     background-color: #000000bd;

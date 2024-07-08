@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,10 +25,11 @@
 
 <div class="grats-text">
     <h1>Congratulations on completing the health survey! </h1>
+    <br>
     <h5>Based on our state-of-the-art health assessment algorithm, developed by 
       leading medical experts and data scientists, we have analyzed the information 
-      you provided. Considering multiple health factors, we have generated a deeply 
-      complex personalized evaluation of your current health status. As a result of 
+      you provided. Considering multiple health factors, we have generated a <b>deeply 
+      complex personalized evaluation</b> of your current health status. As a result of 
       this comprehensive analysis, you have achieved the following result:
     </h5>
 </div>

@@ -1,9 +1,5 @@
 <?php
 
-if (!isset($_SESSION)) {
-    session_start();
-}
-
 include 'data.php'; // Annahme, dass hier $fragen definiert wird
 
 
@@ -83,11 +79,11 @@ if (isset($_POST['back'])) {
                      name='letzteFrageId' value='$aktuelleFrageId'>"; */
 
         // Zurück- und Weiter-Buttons
-        echo'<div class= "button"><button class="back-button" type="submit" name="back"><p class="button-text">BACK</h3></button>';
+        echo'<div class= "button"><button class="back-button" type="submit" name="back"><p class="button-text">BACK</p></button>';
         if ($aktuelleFrageId != 10) { // Annahme, dass hier die maximale Anzahl an Fragen festgelegt ist
-            echo '<button type="submit" name="next"><h3>NEXT<p class="button-text"></button></div>';
+            echo '<button type="submit" name="next"><p class="button-text">NEXT</button></p></div>';
         } else {
-            echo '<button  type="submit" name="send"><p class="button-text">SEND</h3></button></div>';
+            echo '<button  type="submit" name="send"><p class="button-text">SEND</button></p></div>';
         }
         
         echo '</form>';
