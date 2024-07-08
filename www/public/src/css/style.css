@@ -18,7 +18,11 @@ body{
 }
 
 
+<<<<<<< HEAD
 .custom-button {
+=======
+a.btn.btn-lg.custom-button {
+>>>>>>> resultate2
     border: 2px solid #fff;
     background-color: #fff;
     color: #000;
@@ -29,12 +33,20 @@ body{
     font-weight: bold;
 }
 
+<<<<<<< HEAD
 .custom-button:hover {
+=======
+a.btn.btn-lg.custom-button:hover {
+>>>>>>> resultate2
     background-color: #129764;
     color: #fff;
 }
 
+<<<<<<< HEAD
 .custom-button-green {
+=======
+a.btn.btn-lg.custom-button-green {
+>>>>>>> resultate2
     background-color: #129764;
     color: #fff;
     border-radius: 50px;
@@ -44,8 +56,14 @@ body{
     font-weight: bold;
 }
 
+<<<<<<< HEAD
 .custom-button-green:hover {
     background-color: #f0f0f0;
+=======
+a.btn.btn-lg.custom-button-green:hover {
+    background-color: #98ef82;
+    color: #000000;
+>>>>>>> resultate2
 }
 
 .img-container {
@@ -59,4 +77,8 @@ body{
     width: auto;
     object-fit: cover;
     object-position: center;
+<<<<<<< HEAD
+=======
+    border-radius: 12px;
+>>>>>>> resultate2
 }

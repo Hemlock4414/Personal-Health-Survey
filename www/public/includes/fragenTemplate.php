@@ -83,11 +83,11 @@ if (isset($_POST['back'])) {
                      name='letzteFrageId' value='$aktuelleFrageId'>"; */
 
         // Zurück- und Weiter-Buttons
-        echo'<div class= "button"><button type="submit" name="back">Back</button>';
+        echo'<div class= "button"><button class="back-button" type="submit" name="back"><p class="button-text">BACK</h3></button>';
         if ($aktuelleFrageId != 10) { // Annahme, dass hier die maximale Anzahl an Fragen festgelegt ist
-            echo '<button type="submit" name="next">Next</button></div>';
+            echo '<button type="submit" name="next"><h3>NEXT<p class="button-text"></button></div>';
         } else {
-            echo '<button type="submit" name="send">Send</button></div>';
+            echo '<button  type="submit" name="send"><p class="button-text">SEND</h3></button></div>';
         }
         
         echo '</form>';

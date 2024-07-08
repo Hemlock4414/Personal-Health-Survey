@@ -1,5 +1,4 @@
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet">
 <footer class="text-center text-lg-start bg-body-tertiary" style="margin-top: 3rem">
 
   <section class="d-flex justify-content-center justify-content-lg-between p-4" style="background-color: #98ef82;">

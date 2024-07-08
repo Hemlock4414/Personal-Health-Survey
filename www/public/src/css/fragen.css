@@ -26,9 +26,17 @@ p.textFrage{
     height: 86%;
     text-align: center;
     margin-top: 100px;
+<<<<<<< HEAD
     display: flex;
     flex-direction: column;
     
+=======
+    margin-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    
+    
+>>>>>>> resultate2
 }
 
 .frage-form {
@@ -74,9 +82,17 @@ input[type="number"] {
     justify-content: center;
     padding-top: 100px;
     
+<<<<<<< HEAD
 }
 
 button {
+=======
+    
+}
+
+button {
+    margin-top: 20px;
+>>>>>>> resultate2
     padding: 20px 45px;
     background-color: #129764;
     color: white;
@@ -91,6 +107,10 @@ button {
     color: white;
     text-transform: uppercase;
     font-size: 24px;
+<<<<<<< HEAD
+=======
+    margin: 0 auto;
+>>>>>>> resultate2
 }
 
 
