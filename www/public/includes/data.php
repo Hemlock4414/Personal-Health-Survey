@@ -1,5 +1,9 @@
 <?php
 
+if (!isset($_SESSION)) {
+    session_start();
+}
+
 $fragen = [
     '1' => ['id' => 'frage1',
         'typ' => 'slider',
@@ -161,10 +165,4 @@ function printNumber($frage, $frageName, $frageId, $frageMin, $frageMax, $frageW
             value='$frageWert'>";           
 }
 
- function prettyPrint($a){
-    echo '<pre>';
-    print_r($a);
-    echo '</pre>';
-}
 
-?>

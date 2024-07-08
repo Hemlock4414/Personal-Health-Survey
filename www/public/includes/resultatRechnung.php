@@ -1,6 +1,8 @@
 
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 
 foreach ($_SESSION['antworten'] as $key => $value) {
@@ -124,5 +126,5 @@ function prozentFrage10($punkte10){
 
 
 
-?>
+
 

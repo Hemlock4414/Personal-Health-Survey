@@ -1,10 +1,11 @@
 <?php
 
-session_start(); // Starte die Session, um darauf zugreifen zu können
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 include 'data.php'; // Annahme, dass hier $fragen definiert wird
 
-prettyPrint($_POST); // DEVONLY
 
 // Initialisierung des Fortschritts, falls nicht gesetzt
 if (!isset($_SESSION['fortschritt'])) {
@@ -92,4 +93,3 @@ if (isset($_POST['back'])) {
         echo '</form>';
 
 
-?>
