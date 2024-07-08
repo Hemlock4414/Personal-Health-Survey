@@ -59,4 +59,5 @@ a.btn.btn-lg.custom-button-green:hover {
     width: auto;
     object-fit: cover;
     object-position: center;
+    border-radius: 12px;
 }
